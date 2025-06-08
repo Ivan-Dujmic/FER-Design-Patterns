@@ -1,0 +1,1 @@
+cd "c:\FOLDER\Faks\Sem6\OOUP\Lab2\Zadatak5\" ; if ($?) { g++ -std=c++23 main.cpp .\AverageAction.cpp .\FileLogAction.cpp .\FileSource.cpp .\KeyboardSource.cpp .\MedianAction.cpp .\NumberSequence.cpp .\SumAction.cpp -o main } ; if ($?) { .\main }

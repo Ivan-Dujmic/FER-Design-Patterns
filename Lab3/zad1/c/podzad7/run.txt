@@ -1,0 +1,4 @@
+gcc -shared tiger.c -o tiger.dll      
+gcc -shared  parrot.c -o parrot.dll
+gcc myfactory.c animal.c -c
+g++ main.c myfactory.o animal.o

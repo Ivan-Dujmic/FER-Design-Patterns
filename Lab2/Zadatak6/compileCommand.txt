@@ -1,0 +1,1 @@
+cd "c:\FOLDER\Faks\Sem6\OOUP\Lab2\Zadatak6\" ; if ($?) { g++ main.cpp .\Cell.cpp .\Sheet.cpp -o main } ; if ($?) { .\main }

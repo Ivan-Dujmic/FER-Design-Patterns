@@ -1,0 +1,1 @@
+g++ main.cpp tiger.cpp parrot.cpp myfactory.cpp -std=c++20

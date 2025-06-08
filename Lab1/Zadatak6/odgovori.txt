@@ -1,0 +1,49 @@
+ZADATCI:
+Objasnite ispis programa analizirajući prevedeni strojni kod. 
+Obratite pažnju na to tko, kada i gdje postavlja/modificira pokazivač na tablicu virtualnih funkcija.
+
+Java i C# se u ovakvim situacijama ponašaju različito od C++-a. 
+Međutim, polimorfni pozivi tijekom trajanja konstrukcije osnovnih objekata i u tim se jezicima smatraju lošom praksom. 
+Proučite zašto.
+
+ODGOVORI:
+Koraci za ispis su opisani u datoteci demangled.s.
+
+U C# inicijalizatori se postavljaju od najdublje izvedene klase pa do bazne klase te se konstruktori pozivaju od baznog do najdubljeg.
+Tip objekta se ne mijenja kroz konstrukciju već je čitavo vrijeme onoga tipa kojega je najdublja implementacija.
+Ako pozovemo virtualnu metodu unutar konstruktora npr. bazne klase, pozvati će se metoda dublje izvedene klase za koju još nije provedena inicijalizacija.
+Znači da ta metoda možda još nije spremna za izvođenje.
+Primjer:
+
+class Parent
+{
+    public Parent()
+    {
+        DoSomething();
+    }
+
+    protected virtual void DoSomething() 
+    {
+    }
+}
+
+class Child : Parent
+{
+    private string foo;
+
+    public Child() 
+    { 
+        foo = "HELLO"; 
+    }
+
+    protected override void DoSomething()
+    {
+        Console.WriteLine(foo.ToLower()); //NullReferenceException!?!
+    }
+}
+
+Što ako instanciramo Child objekt?
+1. Child.foo se inicijalizira na default 'null'
+2. Poziva se Parent::Parent()
+3. Unutar Parent::Parent() se poziva Child::DoSomething() jer već znamo da je objekt tipa Child
+4. Pokušaj rada na Child.foo baca NullReferenceException jer se nije još izveo Child::Child() koji bi ga postavio na non-null vrijednost

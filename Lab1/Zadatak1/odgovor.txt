@@ -1,0 +1,16 @@
+ZADATAK:
+Nakon rješavanja zadatka, uspostavite vezu s terminologijom iz objektno orijentiranih jezika. 
+Koji elementi vašeg rješenja bi korespondirali s podatkovnim članovima:
+ -objekta
+ -metodama
+ -virtualnim metodama
+ -konstruktorima
+ -te virtualnim tablicama?
+
+ODGOVOR:
+Objekt: Animal (i na neki način Cat i Dog koji su pod Animal)
+Metode: animalPrintGreeting, animalPrintMenu
+Virtualne metode: dogGreet, dogMenu, catGreet, catMenu
+Konstruktori: createDog, createCat
+Virtualne tablice: dogVtable, catVtable
+

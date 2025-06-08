@@ -1,0 +1,13 @@
+ZADATAK:
+Ispitajte memorijske zahtjeve objekata dvaju tipova. Objasnite dobivenu razliku.
+
+ODGOVOR: (za moju trenutnu arhitekturu)
+PlainOldClass sadrži samo int veličine 4 bajta te je to i rezultat funkcije sizeof().
+CoolClass uz int veličine 4 bajta sadrži i pokazivač na virtualnu tablicu koji je veličine 8 bajtova,
+ali sizeof() nam govori da je CoolClass veličine 16 bajtova.
+https://en.wikipedia.org/wiki/Data_structure_alignment#Data_structure_padding
+"Padding is only inserted when a structure member is followed by a member with a larger alignment requirement or at the end of the structure."
+Element veličine 4 bajta se pojavljuje prije elementa veličine 8 bajtova pa se za prvi element dodaje 4 bajta paddinga da bi drugi element bio poravnat.
+Koristeći funkciju alignof() možemo vidjeti na koliko bajtova "se objekt poravnava".
+Koristeći direktivu pack s argumentom 4 za funkciju nalik CoolClass (PackedCoolClass) možemo natjerati prevoditelj da se potrudi poravnati na 4 bajta 
+pa on prerasporedi redoslijed elemenata i time ostvari sizeof() od 12 bajtova.

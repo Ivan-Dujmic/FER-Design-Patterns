@@ -1,0 +1,6 @@
+PITANJE:
+Zadatak ostvarite tako da funkciji mymax kao ključ pošaljete metodu get rječnika D. Objasnite kako i zašto metodu možemo koristiti kao slobodnu funkciju.
+
+ODGOVOR:
+Python dopušta slanje funkcija kao bilo koje druge varijable.
+mymax iterira preko ključeva rječnika te nad njima poziva get() i dobiva values koje može usporediti.

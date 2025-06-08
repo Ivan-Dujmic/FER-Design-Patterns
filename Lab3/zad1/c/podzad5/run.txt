@@ -1,0 +1,3 @@
+gcc -shared tiger.c -o tiger.dll      
+gcc -shared  parrot.c -o parrot.dll
+gcc main.c myfactory.c

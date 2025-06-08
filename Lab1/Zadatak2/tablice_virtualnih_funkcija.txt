@@ -1,0 +1,11 @@
+Unary_Function vtable:
+    Unary_Function::value_at
+    Unary_Function::negative_value_at
+
+Square vtable:
+    Square::value_at
+    Unary_Function::negative_value_at
+
+Linear vtable:
+    Linear::value_at
+    Unary_Function::negative_value_at

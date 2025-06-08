@@ -1,0 +1,13 @@
+PITANJE:
+Komentirajte prednosti i nedostatke ove implementacije u odnosu na implementaciju iz prethodnog zadatka.
+
+ODGOVOR:
+
+Prednosti:
+Radi sa STL containerima i drugim containerima koji sadrže elemente koji nisu poredani uzastopno u memoriji (a imaju implementirane operatore ++x, ==, *).
+Prepuštamo tipu s kojim se radi da koristi svoje operatore (++x, ==, *) umjesto da forsiramo specifičnost kao u prvoj izvedbi.
+Nema manual castinga.
+Hvatanje grešaka pri kompajliranju.
+
+Nedostatci:
+Prva implementacija radi s bilo kojim containerom koji sadrži elemente poredane uzastopno u memoriji i jednake veličine (bez potrebe za implementiranim operatorima).

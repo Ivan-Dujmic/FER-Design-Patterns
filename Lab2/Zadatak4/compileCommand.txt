@@ -1,0 +1,1 @@
+cd "c:\FOLDER\Faks\Sem6\OOUP\Lab2\Zadatak4\" ; if ($?) { g++ main.cpp .\DistributionTester.cpp .\LinInterpolationPC.cpp .\NearestRankPC.cpp .\NormalDistIG.cpp .\SequentialIG.cpp .\FibIG.cpp -o main } ; if ($?) { .\main }

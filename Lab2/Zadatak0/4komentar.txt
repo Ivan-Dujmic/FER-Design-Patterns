@@ -1,0 +1,8 @@
+PITANJE:
+Konačno, implementirajte rješenje s predavanja, i komentirajte njegova svojstva.
+
+ODGOVOR:
+drawShapes i moveShapes mogu raditi pozivanjem metoda na apstraktnom Shape objektu.
+Za dodavanje novoga shapea potrebno je izraditi klasu novog shapea, nasljediti Shape te implementirati potrebne virtualne metode.
+Nije potrebno tražiti razna mjesta u kodu gdje treba napraviti promjene.
+Ovime se rješavamo problema krutosti te smanjujemo krhkost.
