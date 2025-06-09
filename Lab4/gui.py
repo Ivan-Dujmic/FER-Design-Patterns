@@ -108,19 +108,21 @@ class GUI:
             file.write('\n'.join(rows))
 
     def load(self):
-        self.document_model.clear()
-        prototypes = {
-            "@LINE": LineSegment,
-            "@OVAL": Oval,
-            "@COMP": CompositeShape
-        }
-
-        stack: deque[GraphicalObject] = deque()
         file_name = tk.simpledialog.askstring("Load", "Enter file name:")
         if not file_name:
             return
-        try:
+        try:        
+            prototypes = {
+                "@LINE": LineSegment,
+                "@OVAL": Oval,
+                "@COMP": CompositeShape
+            }
+
+            stack: deque[GraphicalObject] = deque()
+
             with open(file_name, 'r') as file:
+                self.document_model.clear()
+                
                 for line in file:
                     parts = line.strip().split()
                     shape_id = parts[0]
