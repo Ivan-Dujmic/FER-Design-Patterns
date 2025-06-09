@@ -13,4 +13,4 @@ class PasteAndTakeCommand(Command):
         self.editor: TextEditor = editor
 
     def execute(self, editor: TextEditor = None):
-        self.editor.on_ctrl_shift_v
+        self.editor.on_ctrl_shift_v()

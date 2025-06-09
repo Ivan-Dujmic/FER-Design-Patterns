@@ -12,5 +12,5 @@ class ClearDocumentCommand(Command):
     def __init__(self, editor: TextEditor):
         self.editor: TextEditor = editor
 
-    def execute(self):
+    def execute(self, editor: TextEditor = None):
         self.editor.clear()
