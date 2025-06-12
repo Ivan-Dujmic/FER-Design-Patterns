@@ -51,11 +51,19 @@ class CompositeShape(GraphicalObject):
     def get_bounding_box(self) -> Rectangle:
         if not self.objects:
             return Rectangle(0, 0, 0, 0)
-        
-        min_x = min(obj.get_bounding_box().x for obj in self.objects)
-        min_y = min(obj.get_bounding_box().y for obj in self.objects)
-        max_x = max(obj.get_bounding_box().x + obj.get_bounding_box().width for obj in self.objects)
-        max_y = max(obj.get_bounding_box().y + obj.get_bounding_box().height for obj in self.objects)
+
+        xs = []
+        ys = []
+        # Handle negatives!
+        for obj in self.objects:
+            bbox = obj.get_bounding_box()
+            xs.extend([bbox.x, bbox.x + bbox.width])
+            ys.extend([bbox.y, bbox.y + bbox.height])
+
+        min_x = min(xs)
+        min_y = min(ys)
+        max_x = max(xs)
+        max_y = max(ys)
 
         return Rectangle(min_x, min_y, max_x - min_x, max_y - min_y)
 
