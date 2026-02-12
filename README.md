@@ -1,5 +1,4 @@
-# FER-Design-Patterns
-My solutions to [FER's Design Patterns](https://www.fer.unizg.hr/predmet/ooup) course lab exercises (somewhat rushed and unpolished).  
+[Associated FER course](https://www.fer.unizg.hr/predmet/ooup)
 
 ## Lab 1
 - Dynamic polymorphism in C
