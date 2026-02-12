@@ -14,12 +14,13 @@ My solutions to FER's Design Patterns course lab exercises (somewhat rushed and 
 - Generic programming in Python
 - Strategy
 - Observer
+- **Simple spreadsheet editor**
 
 ## Lab 3
 - Generic factories in C
 - Registration pattern in C++
 - Generic factories in Python
-- **TextEditor** in Python
+- **Text Editor** in Python
   - Strategy
   - Observer
   - Command
