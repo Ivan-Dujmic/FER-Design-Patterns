@@ -1,6 +1,5 @@
 # FER-Design-Patterns
 My solutions to FER's Design Patterns course lab exercises (somewhat rushed and unpolished).  
-Some parts might be unorganized or just plain bad, wish I had more time to work on these.
 
 ## Lab 1
 - Dynamic polymorphism in C
